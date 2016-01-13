@@ -1723,8 +1723,9 @@
             ctx.scale(.4, .4);
             redCell.drawOneCell(ctx);
             ctx.restore();
-            var favicon = document.getElementById("favicon"),
-                oldfavicon = favicon.cloneNode(true);
+            var favicon = document.getElementById("favicon");
+            if ( ! favicon ) return;
+            var oldfavicon = favicon.cloneNode(true);
             oldfavicon.setAttribute("href", favCanvas.toDataURL("image/png"));
             favicon.parentNode.replaceChild(oldfavicon, favicon)
         }
